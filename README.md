@@ -6,7 +6,7 @@
 
 <h4>Talk to Youtube! </h4>
 
-<video src="https://github.com/SulemanKazi/TTyT/assets/demo_video.mp4" alt="TtYT demo">
+https://github.com/SulemanKazi/TTyT/assets/12900179/17a51eef-c566-40e3-a0f5-caf5ecd5e5d9
 
 </div>
 
@@ -18,9 +18,9 @@ It uses Youtube-DL to get the transcript (or captions) for a video,
 and then uses [Vectara](www.vectara.com) to set up the Retrieval and Generation
 Systems on top of it.
 
-Right now you can talk to one video at a time, but it is easily extendible (PRs)
-welcome! to talk to multiple videos, a whole channel or a combination of
-channels!
+You then ask it questions and it generates answers with actual references
+to (with timestamps) of what the answer is based on from within video's content. The UI is a 
+hacky terminal right now, but you can extend it to take audio as input or produce audio as output.
 
 ## Usage
 
