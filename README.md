@@ -4,16 +4,16 @@
     <img src="assets/ttyt_logo.png" width="400">
   </a>
 
-<h4>Talk to Youtube! 📇</h4>
+<h4>Talk to Youtube! </h4>
 
-<video src="https://github.com/SulemanKazi/TTyT/assets/demo.mp4" alt="TtYT demo">
+<video src="https://github.com/SulemanKazi/TTyT/assets/demo_video.mp4" alt="TtYT demo">
 
 </div>
 
 ## Overview
 
-TtYT (Talk to YouTube) is a Retrieval Augmented Generation (RAG) based
-Question-Answering system for YouTube videos that you can run locally.
+TtYT (Talk to YouTube) is an (almost) instant Retrieval Augmented Generation (RAG)
+based Question-Answering system for YouTube videos that you can run locally.
 It uses Youtube-DL to get the transcript (or captions) for a video,
 and then uses [Vectara](www.vectara.com) to set up the Retrieval and Generation
 Systems on top of it.
@@ -70,11 +70,16 @@ Note that the program works well for videos with manual subtitles. For some
 reason for videos with auto-generated captions YoutubeDL puts all the downloaded
 captions under one timestamp which can cause issues.
 
-IMPORTANT NOTE: If you want to talk to another video, its best to either create
-a new corpus in the Vectara console or clear the data in the existing corpus to
-avoid data overlap between multiple videos. This will be a flag when running
-the program in the future so it will automatically create a new corpus if
-desired.
+IMPORTANT NOTE: If you want to talk to another video, its best to clear the data
+in the existing corpus from the web console avoid data overlap between multiple
+videos. This will be a flag when running the program in the future (when I
+switch to using JWT tokens instead of API Keys) so it will automatically
+create a new corpus if desired. Also if you create a new corpus
+make sure your API key has access to it!
+
+### Bugs? Feature Requests?
 
 Please report any bugs, and feel free to submit Pull Requests for any features
-or improvements you want to see!
+or improvements you want to see! Maybe you want to have the output be an AI
+generated voice instead of text? Maybe you want a snazzy new UI! Build it and
+add it to the repo!
