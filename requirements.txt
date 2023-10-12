@@ -1,0 +1,5 @@
+# YTDL needs to be installed from git. The version on PyPI is outdated.
+requests
+srt
+vtt-to-srt3
+youtube_dl @ git+https://github.com/ytdl-org/youtube-dl.git
