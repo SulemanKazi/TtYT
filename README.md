@@ -41,13 +41,17 @@ tier should be enough for even the larger videos you want to talk to. Once
 you're logged in, create a corpus (you can name it anything) and note the
 Corpus ID (you'll need it for step 3).
 
+<img src="https://github.com/SulemanKazi/TtYT/blob/main/assets/vectara_corpus.png">
 
 Also note your customer ID:
+
+<img src="https://github.com/SulemanKazi/TtYT/blob/main/assets/vectara_customer_id.png">
 
 
 And create an API Key from the "API Access" tab in the menu that we will use to
 index the data and query it (make sure you give it both query and indexing access):
 
+<img src="https://github.com/SulemanKazi/TtYT/blob/main/assets/api_key.png">
 
 ### 3. Talk to Youtube!
 In the terminal you are using to run the program, define the following variables
