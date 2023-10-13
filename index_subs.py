@@ -68,8 +68,8 @@ class SubtitleIndexer:
                                  data=json.dumps(request),
                                  verify=True,
                                  headers=post_headers)
-        logging.info(response.text)
 
+        logging.info(response.text)
         if response.status_code != 200:
             logging.error("Indexing failed with code %d, reason %s, text %s",
                           response.status_code, response.reason, response.text)

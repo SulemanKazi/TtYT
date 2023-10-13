@@ -23,16 +23,20 @@ class YTLogger:
         self.error_msg.append(msg)
 
 
-def get_subtitles_for_video(video_url):
+def get_subtitles_for_video(video_url, lang="en"):
     """Downloads subtitles for a given YouTube video in the SRT format.
 
     Args:
         video_url: URL of the YouTube video.
+        lang: Youtube's language code of the subtitles to download. Note
+            that depending on wheher the video has subtitles or captions
+            lang code for the same language might be different. See the output
+            of YoutubeDL for the available languages.
     Returns:
         The name of the SRT file containing the subtitles, None if an error
         occurs.
     """
-    sub_lang, auto_subs = _find_best_subs(video_url)
+    sub_lang, auto_subs = _find_best_subs(video_url, lang)
     if sub_lang:
         output_file = _download_subs(video_url, sub_lang, auto_subs)
         if output_file:
@@ -41,7 +45,7 @@ def get_subtitles_for_video(video_url):
     return None
 
 
-def _find_best_subs(video_url):
+def _find_best_subs(video_url, lang):
     """Given a video URL, returns the best subtitles available."""
     logger = YTLogger()
 
@@ -71,7 +75,7 @@ def _find_best_subs(video_url):
                 last_seen = "AUTO"
             elif "Available subtitles" in output_line:
                 last_seen = "SUBTITLES"
-            elif output_line.startswith("en"):
+            elif output_line.startswith(lang):
                 caption_lang_code = output_line.split(" ", 2)[0]
                 caption_type = last_seen
 

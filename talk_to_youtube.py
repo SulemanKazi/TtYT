@@ -13,8 +13,8 @@ import index_subs
 import query
 
 
-def talk_to_yt(video_url, customer_id, corpus_id, api_key):
-    subtitle_file = dl_subs.get_subtitles_for_video(video_url)
+def talk_to_yt(video_url, customer_id, corpus_id, api_key, sub_lang):
+    subtitle_file = dl_subs.get_subtitles_for_video(video_url, sub_lang)
     if not subtitle_file:
         logging.error("Unable to obtain subtitles.")
         return
@@ -51,6 +51,10 @@ if __name__ == "__main__":
     parser.add_argument("--video-url",
                         required=True,
                         help="URL of video to talk to.")
+    parser.add_argument("--lang",
+                        default="en",
+                        required=False,
+                        help="Language of subtitles.")
     args = parser.parse_args()
 
     # Get environment variables for account, corpus and api key.
@@ -59,7 +63,7 @@ if __name__ == "__main__":
     api_key = os.environ.get("API_KEY")
 
     if customer_id and corpus_id and api_key:
-        talk_to_yt(args.video_url, customer_id, corpus_id, api_key)
+        talk_to_yt(args.video_url, customer_id, corpus_id, api_key, args.lang)
     else:
         logging.error("Environment variables not set. Please define "
                       "CUSTOMER_ID, CORPUS_ID and API_KEY for your "
